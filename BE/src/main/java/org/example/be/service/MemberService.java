@@ -22,7 +22,7 @@ public class MemberService {
     @Autowired
     private MemberRepository memberRepository;
     @Autowired
-    private View error;
+    private MemberPlanUsageRepository memberPlanUsageRepository;
 
     public Member createMember(Member member) {
         return memberRepository.save(member);
@@ -190,8 +190,6 @@ public class MemberService {
         return memberRepository.getMembersByStatus(status);
     }
     //(Tân)
-    @Autowired
-    private MemberPlanUsageRepository memberPlanUsageRepository;
     public List<MemberResponse> getUsersWithMembershipPlan() {
         List<Member> users = memberRepository.findAllByRole("USER");
         List<MemberResponse> result = new ArrayList<>();

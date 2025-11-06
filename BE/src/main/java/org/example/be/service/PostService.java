@@ -43,8 +43,9 @@ public class PostService {
             post.setPrice(updatedPost.getPrice());
             post.setCreatedAt(updatedPost.getCreatedAt());
             return postRepository.save(post);
+        }else {
+            return null;
         }
-        return null;
     }
 
     // Delete
