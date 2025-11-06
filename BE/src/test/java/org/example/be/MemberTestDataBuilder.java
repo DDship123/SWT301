@@ -1,5 +1,6 @@
 package org.example.be;
 
+import org.example.be.dto.request.MemberRegisterRequest;
 import org.example.be.entity.Member;
 
 public class MemberTestDataBuilder {
@@ -31,5 +32,15 @@ public class MemberTestDataBuilder {
         Member member = createDefaultMember();
         member.setCity(city);
         return member;
+    }
+
+    public static MemberRegisterRequest createDefaultRegisterRequest() {
+        MemberRegisterRequest request = new MemberRegisterRequest();
+        request.setUsername("testuser");
+        request.setAddress("123 Test Street");
+        request.setEmail("testuser@example.com");
+        request.setPhone("0123456789");
+        request.setPassword("password123");
+        return request;
     }
 }

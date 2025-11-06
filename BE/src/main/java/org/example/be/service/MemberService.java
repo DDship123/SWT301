@@ -65,7 +65,6 @@ public class MemberService {
 
         Optional<Member> existingPhone = memberRepository.findByPhone(memberDetails.getPhone());
         if(member.getPhone().matches("^\\d{10,11}$")){
-            error.put("phone", "Định dạng số điện thoại không hợp lệ");
         }else if(existingPhone.isPresent() && !existingPhone.get().getMemberId().equals(id)){
 
             error.put("phone", "Số điện thoại này đã được sử dụng");
