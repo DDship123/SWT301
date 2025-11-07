@@ -1,4 +1,4 @@
-package org.example.be;
+package org.example.be.dataBuilder;
 
 import org.example.be.dto.request.MemberRegisterRequest;
 import org.example.be.entity.Member;

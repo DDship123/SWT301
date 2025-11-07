@@ -1,4 +1,5 @@
 package org.example.be;
+import org.example.be.dataBuilder.MembershipPlanTestDataBuilder;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -6,33 +7,12 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import static org.mockito.Mockito.*;
 import static org.junit.jupiter.api.Assertions.*;
-import jakarta.persistence.Table;
+
 import org.example.be.entity.*;
-import org.example.be.repository.PostRepository;
-import org.example.be.service.PostService;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.example.be.dto.request.MemberRegisterRequest;
-import org.example.be.repository.MemberRepository;
-import org.example.be.service.MemberService;
-import org.example.be.dto.response.ApiResponse;
-import org.example.be.dto.request.LoginRequest;
-import org.example.be.dto.response.MemberResponse;
-import org.example.be.dto.response.ReviewResponse;
-import org.example.be.dto.response.CommentResponse;
-import java.math.BigDecimal;
-import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+
 import java.util.Optional;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
 public class TestMembershipPlan {

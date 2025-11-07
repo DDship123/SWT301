@@ -1,5 +1,6 @@
 package org.example.be;
 
+import org.example.be.dataBuilder.PostTestDataBuilder;
 import org.example.be.entity.*;
 import org.example.be.repository.PostRepository;
 import org.example.be.service.PostService;

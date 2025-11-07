@@ -1,4 +1,4 @@
-package org.example.be;
+package org.example.be.dataBuilder;
 import org.example.be.entity.Review;
 import org.example.be.dto.response.ReviewResponse;
 

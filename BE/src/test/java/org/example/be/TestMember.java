@@ -1,5 +1,6 @@
 package org.example.be;
 
+import org.example.be.dataBuilder.MemberTestDataBuilder;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

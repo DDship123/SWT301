@@ -1,4 +1,4 @@
-package org.example.be;
+package org.example.be.dataBuilder;
 
 import org.example.be.entity.Member;
 import org.example.be.entity.Post;
@@ -102,11 +102,26 @@ public class PostTestDataBuilder {
 
     public static Post createBatteryPost() {
         return new PostTestDataBuilder()
-                .withTitle("Pin Lithium 48V Samsung")
-                .withDescription("Pin Samsung chất lượng cao")
-                .withStatus("PENDING")
-                .withPrice(new BigDecimal("15000000"))
+                .withTitle("Bán Pin Samsung 48V")
+                .withDescription("Pin Samsung dung lượng cao")
+                .withStatus("APPROVED")
+                .withPrice(new BigDecimal("5000000"))
                 .withBatteryProduct()
+                .build();
+    }
+
+    /**
+     * Creates a post without any product (for testing edge cases)
+     */
+    public static Post createPostWithoutProduct() {
+        Member defaultMember = MemberTestDataBuilder.createDefaultMember();
+        return new PostTestDataBuilder()
+                .withTitle("Bài đăng không có sản phẩm")
+                .withDescription("Bài đăng để test trường hợp edge case")
+                .withStatus("APPROVED")
+                .withPrice(new BigDecimal("5000000"))
+                .withSeller(defaultMember)
+                // Không set product - để null để test edge case
                 .build();
     }
 

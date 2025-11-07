@@ -96,35 +96,36 @@ public class TransactionController {
         // TẠO CONTRACT MẶC ĐỊNH "UNSIGN" NGAY KHI TẠO GIAO DỊCH
         contractService.ensureForTransaction(saved.getTransactionsId());
 
-        Commission commission = new Commission();
-        commission.setTransaction(saved);
-        if (post.getProduct().getBattery() != null) {
-            if (post.getPrice().doubleValue() > 10000000) {
-                commission.setCommissionRate(BigDecimal.valueOf(0.03));
-                commission.setAmount(post.getPrice().multiply(commission.getCommissionRate()));
-                commission.setCreatedAt(LocalDateTime.now());
-                commission.setStatus("PAID");
-
-            } else {
-                commission.setCommissionRate(BigDecimal.valueOf(0.02));
-                commission.setAmount(post.getPrice().multiply(commission.getCommissionRate()));
-                commission.setCreatedAt(LocalDateTime.now());
-                commission.setStatus("PAID");
-            }
-        } else if (post.getProduct().getVehicle() != null) {
-            if (post.getPrice().doubleValue() > 20000000) {
-                commission.setCommissionRate(BigDecimal.valueOf(0.04));
-                commission.setAmount(post.getPrice().multiply(commission.getCommissionRate()));
-                commission.setCreatedAt(LocalDateTime.now());
-                commission.setStatus("PAID");
-            } else {
-                commission.setCommissionRate(BigDecimal.valueOf(0.025));
-                commission.setAmount(post.getPrice().multiply(commission.getCommissionRate()));
-                commission.setCreatedAt(LocalDateTime.now());
-                commission.setStatus("PAID");
-            }
-        }
-        commissionService.createCommission(commission);
+        commissionService.createCommission(saved, post);
+//        Commission commission = new Commission();
+//        commission.setTransaction(saved);
+//        if (post.getProduct().getBattery() != null) {
+//            if (post.getPrice().doubleValue() > 10000000) {
+//                commission.setCommissionRate(BigDecimal.valueOf(0.03));
+//                commission.setAmount(post.getPrice().multiply(commission.getCommissionRate()));
+//                commission.setCreatedAt(LocalDateTime.now());
+//                commission.setStatus("PAID");
+//
+//            } else {
+//                commission.setCommissionRate(BigDecimal.valueOf(0.02));
+//                commission.setAmount(post.getPrice().multiply(commission.getCommissionRate()));
+//                commission.setCreatedAt(LocalDateTime.now());
+//                commission.setStatus("PAID");
+//            }
+//        } else if (post.getProduct().getVehicle() != null) {
+//            if (post.getPrice().doubleValue() > 20000000) {
+//                commission.setCommissionRate(BigDecimal.valueOf(0.04));
+//                commission.setAmount(post.getPrice().multiply(commission.getCommissionRate()));
+//                commission.setCreatedAt(LocalDateTime.now());
+//                commission.setStatus("PAID");
+//            } else {
+//                commission.setCommissionRate(BigDecimal.valueOf(0.025));
+//                commission.setAmount(post.getPrice().multiply(commission.getCommissionRate()));
+//                commission.setCreatedAt(LocalDateTime.now());
+//                commission.setStatus("PAID");
+//            }
+//        }
+//        commissionService.createCommission(commission);
 
 
 

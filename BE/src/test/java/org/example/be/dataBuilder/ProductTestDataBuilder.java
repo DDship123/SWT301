@@ -1,4 +1,4 @@
-package org.example.be;
+package org.example.be.dataBuilder;
 
 import org.example.be.entity.Battery;
 import org.example.be.entity.Member;

@@ -1,5 +1,6 @@
 package org.example.be;
 
+import org.example.be.dataBuilder.CommentTestDataBuilder;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -160,4 +161,22 @@ public class TestComment {
         // Verify
         verify(commentRepository, times(1)).findAllByStatus("ACTIVE");
     }
+
+
+    @Test
+    public void testCreateCommentFailWrongContent() {
+        // This test will fail due to wrong content assertion
+        Comment comment = CommentTestDataBuilder.createDefaultComment();
+
+        when(commentRepository.save(any(Comment.class))).thenReturn(comment);
+
+        Comment result = commentService.createComment(comment);
+
+        // This assertion will fail - expecting wrong content
+        assertEquals("Wrong content!", result.getComment()); // Expected "Nice post!" but asserting "Wrong content!"
+
+        verify(commentRepository, times(1)).save(any(Comment.class));
+    }
+
+
 }
